@@ -8,7 +8,8 @@
 		<title>PaintJS</title>
 	</head>
 	<body>
-		<canvas id="jsCanvas" class="canvas"></canvas>
+		<div class="cursor"></div>
+		<canvas id="jsCanvas" class="canvas"> </canvas>
 		<div class="controls">
 			<div class="controls__range">
 				<input
@@ -22,17 +23,11 @@
 			</div>
 			<div class="controls__btns">
 				<button id="jsMode">fill</button>
+				<button id="jsClear">Clear</button>
 				<button id="jsSave">Save</button>
 			</div>
-			<!-- <div class="background__colors">
-				<span>BG-colors</span>
-				<div
-					class="background__color"
-					style="background-color: transparent"
-				></div> -->
-			<!-- <div class="background__color" style="background-color: white"></div>
-			</div> -->
-			<div class="clss controls__colors" id="jsColors">
+
+			<div class="controls__colors" id="jsColors">
 				<!-- <span>colors</span> -->
 				<div
 					class="controls__color jsColor"
@@ -48,6 +43,10 @@
 				></div>
 				<div
 					class="controls__color jsColor"
+					style="background-color: #ff5630"
+				></div>
+				<div
+					class="controls__color jsColor"
 					style="background-color: #ff9500"
 				></div>
 				<div
@@ -57,6 +56,10 @@
 				<div
 					class="controls__color jsColor"
 					style="background-color: #4cd963"
+				></div>
+				<div
+					class="controls__color jsColor"
+					style="background-color: #36b37e"
 				></div>
 				<div
 					class="controls__color jsColor"
@@ -70,6 +73,33 @@
 					class="controls__color jsColor"
 					style="background-color: #5856d6"
 				></div>
+				<div
+					class="controls__color jsColor"
+					style="background-color: #121161"
+				></div>
+				<div
+					class="controls__color jsColor"
+					style="background-color: #46403c"
+				></div>
+				<div
+					class="controls__color jsColor"
+					style="background-color: #59524c"
+				></div>
+				<div
+					class="controls__color jsColor"
+					style="background-color: #c7a589"
+				></div>
+				<div
+					class="controls__color jsColor"
+					style="background-color: #9ea476"
+				></div>
+				<div class="controls__color jsColor" id="randomPenColor">
+					<div id="forDuplicate">
+						<span id="color_front"></span>
+						<input type="color" id="colorPicker" />
+					</div>
+					<button id="saveRandom">save</button>
+				</div>
 			</div>
 		</div>
 		<script src="app.js"></script>

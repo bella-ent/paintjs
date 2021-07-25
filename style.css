@@ -20,7 +20,7 @@ body {
 }
 
 .controls {
-	margin-top: 50px;
+	margin-top: 30px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -30,7 +30,8 @@ body {
 	margin-bottom: 30px;
 }
 
-.controls__btns button {
+.controls__btns button,
+#saveRandom {
 	all: unset;
 	cursor: pointer;
 	background-color: white;
@@ -46,16 +47,18 @@ body {
 	font-size: 12px;
 }
 
-.controls__btns button:active {
+.controls__btns button:active,
+#saveRandom:active {
 	transform: scale(0.98);
 }
 .controls .controls__colors {
 	display: flex;
 }
 
-.controls__colors .controls__color {
-	width: 50px;
-	height: 50px;
+.controls__colors .controls__color,
+.controls__color {
+	width: 35px;
+	height: 35px;
 	border-radius: 50%;
 	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 	cursor: pointer;
@@ -63,4 +66,67 @@ body {
 
 .controls .controls__range {
 	margin-bottom: 30px;
+}
+
+.controls__colors form {
+	border-radius: 50%;
+}
+
+#randomPenColor {
+	position: relative;
+	width: 90px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid lightgrey;
+	margin: 0 20px;
+	top: -5px;
+}
+
+.controls__colors input[type="color"] {
+	/* display: none; */
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: none;
+	background-color: transparent;
+	z-index: -1;
+	left: 10px;
+}
+.controls__colors span {
+	border-radius: 50%;
+	width: 35px;
+	height: 35px;
+	background-color: black;
+	/* background: radial-gradient(
+		circle,
+		rgba(251, 63, 63, 1) 0%,
+		rgba(251, 181, 64, 1) 20%,
+		rgba(236, 251, 72, 1) 39%,
+		rgba(140, 239, 79, 1) 55%,
+		rgba(85, 201, 197, 1) 70%,
+		rgba(149, 150, 161, 1) 85%,
+		rgba(160, 70, 252, 1) 100%
+	); */
+	display: inline-block;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+}
+
+#saveRandom {
+	position: absolute;
+	right: 5px;
+	top: 7px;
+	width: 40px;
+}
+
+.customColors {
+	width: 300px;
+	height: 50px;
+}
+
+.customColors {
+	display: flex;
+	flex-direction: column;
 }
