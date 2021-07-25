@@ -43,6 +43,7 @@ if (canvas) {
 	canvas.addEventListener("touchmove", onMouseMove);
 	canvas.addEventListener("touchstart", startPainting);
 	canvas.addEventListener("touchend", stopPainting);
+	canvas.addEventListener("touchcancel", stopPainting);
 }
 
 function handleColorClick(event) {
