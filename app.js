@@ -45,7 +45,7 @@ function startPainting() {
 	painting = true;
 }
 
-function stopPainting(event) {
+function stopPainting() {
 	painting = false;
 }
 
@@ -66,7 +66,7 @@ function onMoveTouch(event) {
 	const x = event.changedTouches[0].pageX - canvas.getBoundingClientRect().left;
 	const y = event.changedTouches[0].pageY - canvas.getBoundingClientRect().top;
 
-	if (painting === false) {
+	if (!painting) {
 		ctx.beginPath();
 		ctx.moveTo(x, y);
 	} else {
