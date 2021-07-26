@@ -61,6 +61,20 @@ function onMouseMove(event) {
 	}
 }
 
+function onMoveTouch(event) {
+	event.preventDefault();
+	const x = event.changedTouches[0].pageX - canvas.getBoundingClientRect().left;
+	const y = event.changedTouches[0].pageY - canvas.getBoundingClientRect().top;
+
+	if (painting === false) {
+		ctx.beginPath();
+		ctx.moveTo(x, y);
+	} else {
+		ctx.lineTo(x, y);
+		ctx.stroke();
+	}
+}
+
 function onMouseDown(event) {
 	painting = true;
 }
@@ -140,6 +154,10 @@ if (canvas) {
 	canvas.addEventListener("mouseleave", stopPainting);
 	canvas.addEventListener("click", handleCanvasClick);
 	canvas.addEventListener("contextmenu", handleCM);
+
+	canvas.addEventListener("touchmove", onMoveTouch);
+	canvas.addEventListener("touchstart", startPainting);
+	canvas.addEventListener("touchend", stopPainting);
 }
 
 Array.from(colors).forEach((color) =>
