@@ -73,7 +73,6 @@ function onMoveTouch(event) {
 	} else {
 		ctx.lineTo(x, y);
 		ctx.stroke();
-		painting = false;
 	}
 }
 
