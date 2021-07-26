@@ -58,7 +58,6 @@ function onMouseMove(event) {
 	} else {
 		ctx.lineTo(x, y);
 		ctx.stroke();
-		ctx.closedPath();
 	}
 }
 
@@ -73,6 +72,7 @@ function onMoveTouch(event) {
 	} else {
 		ctx.lineTo(x, y);
 		ctx.stroke();
+		ctx.closedPath();
 	}
 }
 
