@@ -26,12 +26,13 @@ const BG_colors = [
   "#f6f9fc",
 ];
 
-//? picking color among above randomly.
+//? pick color among above randomly.
 const chosen_bgColor = BG_colors[Math.floor(Math.random() * BG_colors.length)];
 
-//? giving the color to the background.
+//? give the color to the background.
 document.body.style.backgroundColor = chosen_bgColor;
 
+//? check the innerwidth and adjust canvas' size
 if (window.innerWidth <= 500) {
   canvas.width = 420;
   canvas.height = 450;
@@ -68,6 +69,8 @@ function onMouseMove(event) {
     ctx.stroke();
   }
 }
+
+//touch event
 
 function onMoveTouch(event) {
   event.preventDefault();
