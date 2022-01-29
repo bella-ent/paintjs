@@ -34,8 +34,8 @@ document.body.style.backgroundColor = chosen_bgColor;
 
 //? check the innerwidth and adjust canvas' size
 if (window.innerWidth <= 500) {
-  canvas.width = 420;
-  canvas.height = 450;
+  canvas.width = 400;
+  canvas.height = 400;
 } else {
   canvas.width = 700;
   canvas.height = 600;
@@ -61,6 +61,7 @@ function stopPainting() {
 function onMouseMove(event) {
   const x = event.offsetX;
   const y = event.offsetY;
+
   if (!painting) {
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -74,20 +75,23 @@ function onMouseMove(event) {
 
 function onMoveTouch(event) {
   event.preventDefault();
-  const x = event.changedTouches[0].pageX - canvas.getBoundingClientRect().left;
-  const y = event.changedTouches[0].pageY - canvas.getBoundingClientRect().top;
-
-  if (!painting) {
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-  } else {
-    ctx.lineTo(x, y);
-    ctx.stroke();
-  }
+  const x = event.touches[0].pageX - canvas.getBoundingClientRect().left;
+  const y = event.touches[0].pageY - canvas.getBoundingClientRect().top;
+  console.log(x, y);
+  //   if (!painting) {
+  //     ctx.beginPath();
+  //     ctx.moveTo(x, y);
+  //   } else {
+  ctx.stroke();
+  ctx.lineTo(x, y);
+  //   }
 }
 
 function onMouseDown(event) {
   painting = true;
+}
+function onMouseLeave(event) {
+  painting = false;
 }
 
 function handleRangeChange(event) {
@@ -168,7 +172,7 @@ if (canvas) {
 
   canvas.addEventListener("touchmove", onMoveTouch);
   canvas.addEventListener("touchstart", startPainting);
-  canvas.addEventListener("touchend", stopPainting);
+  canvas.addEventListener("touchend", onMouseLeave);
 }
 
 Array.from(colors).forEach((color) =>
